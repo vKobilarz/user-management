@@ -25,7 +25,6 @@ export const UserProvider: FC = ({ children }) => {
       setUsers(data);
     } catch (err) {
       if (err?.response?.status === 401) {
-        // toast.error('Realize o login para realizar esta requisição.');
       }
     }
   }
@@ -37,7 +36,6 @@ export const UserProvider: FC = ({ children }) => {
       return data;
     } catch (err) {
       if (err?.response?.status === 401) {
-        // toast.error('Realize o login para realizar esta requisição.');
       }
     }
   }

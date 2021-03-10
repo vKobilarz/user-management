@@ -30,7 +30,6 @@ const Map: FC<MapProps> = ({ markers, initialPosition }) => {
         <Marker
           key={`${marker.latitude}-${marker.longitude}`}
           position={[marker.latitude, marker.longitude]}
-          // icon={ocurrence.selected ? selectedMarker : marker}
         />
       ))}
     </LeafletMap>
