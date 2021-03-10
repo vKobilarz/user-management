@@ -36,3 +36,29 @@ export const Table = styled.table`
     color: #bababa;
   }
 `;
+
+export const TableContainer = styled.div`
+  overflow-x: auto;
+
+  /* width */
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #1c1e26;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bababa;
+
+    border-radius: 4px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+`;

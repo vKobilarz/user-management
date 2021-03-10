@@ -7,7 +7,7 @@ import PageContainer from '../../components/PageContainer';
 import { Title } from '../../components/PageTitle/styles';
 import { useUsers } from '../../hooks/UserContext';
 
-import { Table } from './styles';
+import { Table, TableContainer } from './styles';
 
 const UserList: FC = () => {
   const { getUsers, users } = useUsers();
@@ -24,36 +24,38 @@ const UserList: FC = () => {
   return (
     <PageContainer>
       <Title>Usuários</Title>
-      <Table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Telefone</th>
-            <th>Usuário</th>
-            <th>Site</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map(user => (
-            <tr key={user.id}>
-              <td>
-                <Link to={`/users/view/${user.id}`}>
-                  <MdInfo />
-                </Link>
-              </td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
-              <td>{user.username}</td>
-              <td>
-                <a href={`https://${user.website}`}>{user.website}</a>
-              </td>
+      <TableContainer>
+        <Table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
+              <th>Usuário</th>
+              <th>Site</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {users.map(user => (
+              <tr key={user.id}>
+                <td>
+                  <Link to={`/users/view/${user.id}`}>
+                    <MdInfo />
+                  </Link>
+                </td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.phone}</td>
+                <td>{user.username}</td>
+                <td>
+                  <a href={`https://${user.website}`}>{user.website}</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </TableContainer>
     </PageContainer>
   );
 };

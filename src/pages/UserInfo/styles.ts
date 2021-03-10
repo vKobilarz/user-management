@@ -5,6 +5,14 @@ export const FlexContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+
+    div + div {
+      margin-left: 0px !important;
+    }
+  }
+
   div + div {
     margin-left: 16px;
   }
