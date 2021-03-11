@@ -8,11 +8,11 @@ interface InputProps {
   disabled?: boolean;
 }
 
-const Input: FC<InputProps> = ({ value = '', label, disabled }) => {
+const Input: FC<InputProps> = ({ value = '', label, disabled, ...others }) => {
   return (
     <InputContainer>
-      <label>{label}:</label>
-      <input value={value} disabled={disabled} />
+      <label>{label}</label>
+      <input value={value} disabled={disabled} {...others}  />
     </InputContainer>
   );
 };

@@ -26,9 +26,7 @@ const UserInfo = () => {
     async function fetchData() {
       const user = await getUserById({ id: Number(pathParam.id) });
 
-      if (user) {
-        setUser(user);
-      }
+      setUser(user);
     }
 
     fetchData();
@@ -41,20 +39,44 @@ const UserInfo = () => {
         <>
           <Section title="Informações Básicas">
             <FlexContainer>
-              <Input label="Nome" value={user.name} disabled />
+              <Input
+                label="Nome"
+                value={user.name}
+                disabled
+              />
             </FlexContainer>
             <FlexContainer>
-              <Input label="E-Mail" value={user.email} disabled />
-              <Input label="Telefone" value={user.phone} disabled />
+              <Input
+                label="E-Mail"
+                value={user.email}
+                disabled
+              />
+              <Input
+                label="Telefone"
+                value={user.phone}
+                disabled
+              />
             </FlexContainer>
             <FlexContainer>
-              <Input label="Usuário" value={user.username} disabled />
-              <Input label="Website" value={user.website} disabled />
+              <Input
+                label="Usuário"
+                value={user.username}
+                disabled
+              />
+              <Input
+                label="Website"
+                value={user.website}
+                disabled
+              />
             </FlexContainer>
           </Section>
           <Section title="Empresa">
             <FlexContainer>
-              <Input label="Nome" value={user.company?.name} disabled />
+              <Input
+                label="Nome"
+                value={user.company?.name}
+                disabled
+              />
             </FlexContainer>
             <FlexContainer>
               <Input
@@ -62,17 +84,37 @@ const UserInfo = () => {
                 value={user.company.catchPhrase}
                 disabled
               />
-              <Input label="Bs" value={user.company.bs} disabled />
+              <Input
+                label="Bs"
+                value={user.company.bs}
+                disabled
+              />
             </FlexContainer>
           </Section>
           <Section title="Endereço">
             <FlexContainer>
-              <Input label="Cidade" value={user.address.city} disabled />
-              <Input label="Rua" value={user.address.street} disabled />
+              <Input
+                label="Cidade"
+                value={user.address.city}
+                disabled
+              />
+              <Input
+                label="Rua"
+                value={user.address.street}
+                disabled
+              />
             </FlexContainer>
             <FlexContainer>
-              <Input label="Número" value={user.address.suite} disabled />
-              <Input label="CEP" value={user.address.zipcode} disabled />
+              <Input
+                label="Suite"
+                value={user.address.suite}
+                disabled
+              />
+              <Input
+                label="CEP"
+                value={user.address.zipcode}
+                disabled
+              />
             </FlexContainer>
             <MapContainer>
               <Map

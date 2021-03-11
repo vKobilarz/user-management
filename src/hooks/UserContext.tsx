@@ -19,25 +19,15 @@ export const UserProvider: FC = ({ children }) => {
   const [users, setUsers] = useState<User[]>([]);
 
   async function getUsers() {
-    try {
-      const { data } = await api.get<User[]>('users');
+    const { data } = await api.get<User[]>('users');
 
-      setUsers(data);
-    } catch (err) {
-      if (err?.response?.status === 401) {
-      }
-    }
+    setUsers(data);
   }
 
-  async function getUserById({ id }: getUserByIdParams): Promise<User | void> {
-    try {
-      const { data } = await api.get<User>(`users/${id}`);
+  async function getUserById({ id }: getUserByIdParams): Promise<User> {
+    const { data } = await api.get<User>(`users/${id}`);
 
-      return data;
-    } catch (err) {
-      if (err?.response?.status === 401) {
-      }
-    }
+    return data;
   }
 
   return (
@@ -55,10 +45,6 @@ export const UserProvider: FC = ({ children }) => {
 
 export function useUsers(): UserContextState {
   const context = useContext(UserContext);
-
-  if (!context) {
-    throw new Error('useUsers must be used within an UserProvider');
-  }
 
   return context;
 }
