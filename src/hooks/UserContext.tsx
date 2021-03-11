@@ -10,7 +10,7 @@ interface getUserByIdParams {
 interface UserContextState {
   users: User[];
   getUsers(): Promise<void>;
-  getUserById(params: getUserByIdParams): Promise<User | void>;
+  getUserById(params: getUserByIdParams): Promise<User>;
 }
 
 const UserContext = createContext<UserContextState>({} as UserContextState);
